@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.org/jrhub/BayesVC.svg?branch=master)](https://travis-ci.org/jrhub/BayesVC)
+status](https://travis-ci.org/jrhub/spinBayes.svg?branch=master)](https://travis-ci.org/jrhub/spinBayes)
 <!-- badges: end -->
 <!-- [![CRAN](https://www.r-pkg.org/badges/version/regnet)](https://cran.r-project.org/package=regnet) -->
 
@@ -118,8 +118,8 @@ submitted)
 
 <!-- ## References -->
 
-<!-- * Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics. [Briefings in Bioinformatics, 16(5), 873–883](http://doi.org/10.1093/bib/bbu046) -->
+<!-- * Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics. [Briefings in Bioinformatics, 16(5), 873â€“883](http://doi.org/10.1093/bib/bbu046) -->
 
-<!-- * Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions. [Statistics in Medicine, 34 (30): 4016–4030](https://doi.org/10.1002/sim.6609) -->
+<!-- * Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions. [Statistics in Medicine, 34 (30): 4016â€“4030](https://doi.org/10.1002/sim.6609) -->
 
-<!-- * Wu, C, Jiang, Y, Ren, J, Cui, Y, Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.[Statistics in Medicine, 37:437–456](https://doi.org/10.1002/sim.7518) -->
+<!-- * Wu, C, Jiang, Y, Ren, J, Cui, Y, Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.[Statistics in Medicine, 37:437â€“456](https://doi.org/10.1002/sim.7518) -->
