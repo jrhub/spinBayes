@@ -69,9 +69,9 @@
 #' spbayes
 #'
 #' ## non-sparse
-#' sparse=FALSE
-#' spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
-#' spbayes
+#' #sparse=FALSE
+#' #spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
+#' #spbayes
 #'
 #' ## all linear (Bayesian LASSO)
 #' #VC=FALSE
