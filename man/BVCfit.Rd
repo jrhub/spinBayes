@@ -101,6 +101,6 @@ spbayes
 
 }
 \references{
-Ren, J., Zhou, F., Li, X. et al. Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
 }
 \keyword{models}

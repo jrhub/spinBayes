@@ -11,8 +11,8 @@ Description: Many complex diseases are known to be affected by the interactions 
    accommodate linear and nonlinear G×E interactions simultaneously. Furthermore, the 
    proposed method can conduct structural identification by distinguishing nonlinear interactions from main effects only case within Bayesian framework. Spike-and-slab priors are 
    incorporated on both individual and group level to shrink coefficients corresponding to 
-   irrelevant main and interaction effects to zero exactly. The MCMC algorithms of the proposed and 
-   alternative methods are  efficiently implemented in C++. 
+   irrelevant main and interaction effects to zero exactly. The MCMC algorithms of the proposed 
+   and alternative methods are  efficiently implemented in C++. 
 Depends: R (>= 3.5.0)
 License: GPL-2
 Encoding: UTF-8
