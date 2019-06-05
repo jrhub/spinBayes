@@ -8,34 +8,34 @@ BVC_SI <- function(xx, y, CLC0, EX, s, q, max.steps, hat.m, hat.r0, hat.r.star, 
   invSigM0 = rep(10^-3, q)
   hat.sigma.sq = 1
 
-  lambda = 1 # s * sqrt(hat.sigma.sq) / sum(abs(hat.r0))
-  lambda.star = 1 #length(hat.r.star) * sqrt(hat.sigma.sq) / sum(abs(hat.r.star))
+  lambda = 1  # s * sqrt(hat.sigma.sq) / sum(abs(hat.r0))
+  lambda.star = 1  #length(hat.r.star) * sqrt(hat.sigma.sq) / sum(abs(hat.r.star))
   lambda.zeta = 1
-  
+
   hat.pi0 = 0.9
   hat.pi.s = 0.9
   hat.pi.ze = 0.9
 
-  a0 = ifelse(is.null(hyper$a.c), 1, hyper$a.c); 
+  a0 = ifelse(is.null(hyper$a.c), 1, hyper$a.c);
   b0 = ifelse(is.null(hyper$b.c), 1.5, hyper$b.c);
-  a.star = ifelse(is.null(hyper$a.v), 1, hyper$a.v); 
+  a.star = ifelse(is.null(hyper$a.v), 1, hyper$a.v);
   b.star = ifelse(is.null(hyper$b.v), 1.5, hyper$b.v);
   alpha = ifelse(is.null(hyper$s), 0.2, hyper$s);
-  gamma = ifelse(is.null(hyper$h), 0.1, hyper$h); 
+  gamma = ifelse(is.null(hyper$h), 0.1, hyper$h);
 
-  mu0 = ifelse(is.null(hyper$r.c), 1, hyper$r.c); 
-  nu0 = ifelse(is.null(hyper$w.c), 1, hyper$w.c); 
-  mu.star = ifelse(is.null(hyper$r.v), 1, hyper$r.v); 
-  nu.star = ifelse(is.null(hyper$w.v), 1, hyper$w.v); 
-  muE = ifelse(is.null(hyper$r.e), 1, hyper$r.e); 
-  nuE = ifelse(is.null(hyper$w.e), 1, hyper$w.e); 
+  mu0 = ifelse(is.null(hyper$r.c), 1, hyper$r.c);
+  nu0 = ifelse(is.null(hyper$w.c), 1, hyper$w.c);
+  mu.star = ifelse(is.null(hyper$r.v), 1, hyper$r.v);
+  nu.star = ifelse(is.null(hyper$w.v), 1, hyper$w.v);
+  muE = ifelse(is.null(hyper$r.e), 1, hyper$r.e);
+  nuE = ifelse(is.null(hyper$w.e), 1, hyper$w.e);
 
   progress = ifelse(debugging, 10^(floor(log10(max.steps))-1), 0)
   noE = TRUE
-  # cat("sparse:", sparse, "\n")
+
   if(!is.null(EX)){
     noE = FALSE
-    if(debugging) cat("No. of CLC0: ", ncol(CLC0), "\n")
+    # if(debugging) message("No. of CLC0: ", ncol(CLC0), "\n")
     CLC = CLC0[,-ncol(CLC0), drop=FALSE]
     hat.clin = utils::head(hat.clc, -1)
     invSigCLC0 = diag(invSig.clc0, nrow=ncol(CLC), ncol=ncol(CLC))
@@ -52,7 +52,7 @@ BVC_SI <- function(xx, y, CLC0, EX, s, q, max.steps, hat.m, hat.r0, hat.r.star, 
     }
 
   }else{
-    if(debugging) cat("No. of CLC0: ", ncol(CLC0), "\n")
+    # if(debugging) message("No. of CLC0: ", ncol(CLC0), "\n")
     if(ncol(CLC0)==1){
       CLC = matrix(0, nrow = nrow(CLC0), ncol = 1)
       CLIN = FALSE

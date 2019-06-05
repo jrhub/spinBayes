@@ -23,13 +23,16 @@ BVSelection(obj, ...)
 \item{prob}{probability for credible interval, between 0 and 1. e.g. prob=0.95 leads to 95\% credible interval}
 }
 \value{
-a list of indices and names of selected variables.
+an object of class "BVSelection" is returned, which is a list with components:
+\item{method}{posterior samples from the MCMC}
+\item{indices}{a list of indices and names of selected variables}
+\item{summary}{a summary of selected variables}
 }
 \description{
 Variable selection for a BVCfit object
 }
 \details{
-for class 'BVCSparse', the median probability model (MPM) (Barbieri and Berger 2004) is used to identify predictors that are significantly associated
+For class 'BVCSparse', the median probability model (MPM) (Barbieri and Berger 2004) is used to identify predictors that are significantly associated
 with the response variable. For class 'BVCNonSparse', variable selection is based on 95\% credible interval.
 Please check the references for more details about the variable selection.
 }
@@ -40,7 +43,7 @@ spbayes=BVCfit(X, Y, Z, E, clin)
 spbayes
 
 selected = BVSelection(spbayes)
-selected
+selected$indices
 
 ## non-sparse
 spbayes=BVCfit(X, Y, Z, E, clin, sparse=FALSE)
@@ -51,7 +54,8 @@ selected
 
 }
 \references{
-Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
+\url{https://arxiv.org/abs/1906.01057}
 
 Barbieri, M.M. and Berger, J.O. (2004). Optimal predictive model selection
 \href{https://projecteuclid.org/euclid.aos/1085408489}{\emph{Ann. Statist}, 32(3):870–897}

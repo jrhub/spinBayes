@@ -5,18 +5,23 @@
 #' @param obj BVCfit object.
 #' @param ... other BVSelection arguments
 #'
-#' @details for class 'BVCSparse', the median probability model (MPM) (Barbieri and Berger 2004) is used to identify predictors that are significantly associated
+#' @details For class 'BVCSparse', the median probability model (MPM) (Barbieri and Berger 2004) is used to identify predictors that are significantly associated
 #' with the response variable. For class 'BVCNonSparse', variable selection is based on 95\% credible interval.
 #' Please check the references for more details about the variable selection.
 #'
 #' @references
-#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
+#' \url{https://arxiv.org/abs/1906.01057}
 #'
 #' Barbieri, M.M. and Berger, J.O. (2004). Optimal predictive model selection
 #' \href{https://projecteuclid.org/euclid.aos/1085408489}{\emph{Ann. Statist}, 32(3):870–897}
 #'
 #' @rdname BVSelection
-#' @return a list of indices and names of selected variables.
+#' @return an object of class "BVSelection" is returned, which is a list with components:
+#' \item{method}{posterior samples from the MCMC}
+#' \item{indices}{a list of indices and names of selected variables}
+#' \item{summary}{a summary of selected variables}
+#'
 #' @seealso \code{\link{BVCfit}}
 #'
 #' @examples
@@ -26,7 +31,7 @@
 #' spbayes
 #'
 #' selected = BVSelection(spbayes)
-#' selected
+#' selected$indices
 #'
 #' ## non-sparse
 #' spbayes=BVCfit(X, Y, Z, E, clin, sparse=FALSE)
@@ -77,8 +82,6 @@ BVSelection.BVCNonSparse=function(obj, burn.in=obj$burn.in, prob=0.95,...){
   MPM.Z = which(SelectZeta > 0)
   numb = matrix(c(length(MPM.C), length(MPM.V), length(MPM.Z)), ncol=1,
                 dimnames=list(c("Constant effect", "Varying effect", "Linear interaction"), "#"))
-  # cat("Method: ", prob*100,"%CI\n", sep = "")
-  # print(numb); cat("\n")
 
   Var.names = colnames(obj$coefficient$VC)[-1]
   if(length(MPM.C)>0){
@@ -109,10 +112,10 @@ BVSelection.BVCNonSparse=function(obj, burn.in=obj$burn.in, prob=0.95,...){
     sel = list(Constant=Main, Varying=Varying, Linear=Linear)
   }
 
-  cat("Method: ", prob*100,"%CI\n", sep = "")
-  print(numb); cat("\n")
-  # class(sel) = "BVSelection"
-  sel
+  method = paste(prob*100,"% credible interval", sep = "")
+  out = list(method=method, indices=sel, summary=numb)
+  class(out) = "BVSelection"
+  out
 }
 
 
@@ -140,7 +143,6 @@ BVSelection.BVCSparse=function(obj, burn.in=obj$burn.in,...){
   MPM.Z = which(SelectZeta > max_BI/2)
   numb = matrix(c(length(MPM.C), length(MPM.V), length(MPM.Z)), ncol=1,
                 dimnames=list(c("Constant effect", "Varying effect", "Linear interaction"), "#"))
-  print(numb); cat("\n")
 
   Var.names = colnames(obj$coefficient$VC)[-1]
   if(length(MPM.C)>0){
@@ -164,7 +166,10 @@ BVSelection.BVCSparse=function(obj, burn.in=obj$burn.in,...){
     Linear = NULL
   }
 
-  list(Constant=Main, Varying=Varying, Linear=Linear)
-  # class(sel) = "BVSelection"
-  # sel
+  sel = list(Constant=Main, Varying=Varying, Linear=Linear)
+  method = paste("Median Probability Model (MPM)", sep = "")
+
+  out = list(method=method, indices=sel, summary=numb)
+  class(out) = "BVSelection"
+  out
 }

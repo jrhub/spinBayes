@@ -65,7 +65,7 @@ If VC=FALSE, all interactions are treated as linear and a Bayesian LASSO model w
 \deqn{Y \sim Z + ZX + clin + E + EX}
 Please check the references for more details about the model.
 
-Users can modify the hyper-parameters by providing a named list of hyper-parameters via the argument ‘hyper’.
+Users can modify the hyper-parameters by providing a named list of hyper-parameters via the argument 'hyper'.
 The list can have the following named components
 \itemize{
   \item{a.c, a.v, a.e: }{ shape parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.}
@@ -89,18 +89,16 @@ structural=FALSE
 spbayes=BVCfit(X, Y, Z, E, clin, structural=structural)
 spbayes
 
+\donttest{
 ## non-sparse
-#sparse=FALSE
-#spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
-#spbayes
-
-## all linear (Bayesian LASSO)
-#VC=FALSE
-#bl=BVCfit(X, Y, Z, E, clin, VC=VC)
-#bl
+sparse=FALSE
+spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
+spbayes
+}
 
 }
 \references{
-Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
+\url{https://arxiv.org/abs/1906.01057}
 }
 \keyword{models}

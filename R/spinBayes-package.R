@@ -20,7 +20,8 @@ NULL
 #' predict() takes a BVCfit object and returns the predicted values for new observations.
 #'
 #' @references
-#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
+#' \url{https://arxiv.org/abs/1906.01057}
 #'
 #' Wu, C., Li, S., and Cui, Y. (2012). Genetic Association Studies: An Information Content Perspective.
 #' \href{https://doi.org/10.2174/138920212803251382}{\emph{Current Genomics}, 13(7),  566–573}

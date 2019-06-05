@@ -134,7 +134,6 @@ predict.LinOnly=function(object, X.new, Z.new, E.new=NULL, clin.new=NULL, Y.new=
     stop(paste("number of columns of X.new dose not match the length of the estimates."))
   }
 
-  print(is.null(E.new))
   if(is.null(E.new)){
     if(!is.null(coeff.EX)) stop(paste("please provide the data of environmental factor E", sep = ""))
     EX = NULL

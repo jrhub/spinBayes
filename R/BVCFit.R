@@ -35,7 +35,7 @@
 #' \deqn{Y \sim Z + ZX + clin + E + EX}
 #' Please check the references for more details about the model.
 #'
-#' Users can modify the hyper-parameters by providing a named list of hyper-parameters via the argument ‘hyper’.
+#' Users can modify the hyper-parameters by providing a named list of hyper-parameters via the argument 'hyper'.
 #' The list can have the following named components
 #' \itemize{
 #'   \item{a.c, a.v, a.e: }{ shape parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.}
@@ -54,7 +54,8 @@
 #' \item{iterations}{the number of MCMC iterations.}
 #'
 #' @references
-#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019+) Semi-parametric Bayesian variable selection for gene-environment interactions. (To be submitted)
+#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
+#' \url{https://arxiv.org/abs/1906.01057}
 #'
 #' @examples
 #' data(gExp)
@@ -68,15 +69,12 @@
 #' spbayes=BVCfit(X, Y, Z, E, clin, structural=structural)
 #' spbayes
 #'
+#' \donttest{
 #' ## non-sparse
-#' #sparse=FALSE
-#' #spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
-#' #spbayes
-#'
-#' ## all linear (Bayesian LASSO)
-#' #VC=FALSE
-#' #bl=BVCfit(X, Y, Z, E, clin, VC=VC)
-#' #bl
+#' sparse=FALSE
+#' spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
+#' spbayes
+#' }
 #'
 #' @export
 
@@ -150,7 +148,7 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   coeff.array = as.vector(stats::predict(lasso.fit, s=lambda.cv, type="coefficients"))[-2];
 
   nclc = ncol(CLC)
-  if(debugging) cat("E: ", (!noE)*1, ", clinical: ", ifelse(noClin, 0, ncol(CLC)-1-!noE), "\n")
+  if(debugging) message("No. of E: ", (!noE)*1, "\nNo. of clinical covariates: ", ifelse(noClin, 0, ncol(CLC)-1-!noE), "\n")
 
   if(VC){
 	  hat.m = coeff.array[1:q]      ## coeff for intercept
@@ -163,16 +161,11 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   hat.zeta = utils::tail(coeff.clc, -nclc)  ## EX ZX
 
   if(!VC){
-	# cat("length(hat.zeta)", length(hat.zeta), "\n")
-	# cat("length(hat.clc)", length(hat.clc), "\n")
-	# cat("length(hat.zeta)", length(hat.zeta), "\n")
-	# cat("dim(ZX)", dim(ZX), "\n")
-	# cat("dim(CLC)", dim(CLC), "\n")
-	out = BLasso(xx, y, CLC, EX, ZX, s, iterations, coeff.array[1], coeff.array[2:ncol(xx)], hat.clc, hat.zeta, hyper, debugging)
-	CC = apply(out$posterior$GS.r0[-c(1:BI),,drop=FALSE], 2, stats::median)
+	  out = BLasso(xx, y, CLC, EX, ZX, s, iterations, coeff.array[1], coeff.array[2:ncol(xx)], hat.clc, hat.zeta, hyper, debugging)
+	  CC = apply(out$posterior$GS.r0[-c(1:BI),,drop=FALSE], 2, stats::median)
     LL = apply(out$posterior$GS.rs[-c(1:BI),,drop=FALSE], 2, stats::median)
-	names(CC) = names(LL) = Var.names
-	coeff = list(intercept=stats::median(out$posterior$GS.m[-c(1:BI)]), Z=stats::median(out$posterior$GS.Z[-c(1:BI)]), Main=CC, Interaction=LL)
+	  names(CC) = names(LL) = Var.names
+	  coeff = list(intercept=stats::median(out$posterior$GS.m[-c(1:BI)]), Z=stats::median(out$posterior$GS.Z[-c(1:BI)]), Main=CC, Interaction=LL)
   }else{
     if(structural){
       out = BVC_SI(xx, y, CLC, EX, s, q, iterations, hat.m, hat.r0, hat.r.star, hat.clc, hat.zeta, sparse, hyper, debugging)

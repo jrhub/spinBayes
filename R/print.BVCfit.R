@@ -36,3 +36,21 @@ print.BVCfit.pred=function(x, digits = max(3, getOption("digits") - 3),...){
   print(x$pmse)
   cat("\npredicted ", length(x$y.pred), " y (list component y.pred)", sep = "")
 }
+
+
+#' print a BVSelection object
+#'
+#' Print a summary of a BVSelection object
+#'
+#' @param x BVSelection object.
+#' @param digits significant digits in printout.
+#' @param ... other print arguments
+#' @usage \method{print}{BVSelection}(x, digits = max(3, getOption("digits") - 3), \dots)
+#' @seealso \code{\link{BVSelection}}
+#' @export
+print.BVSelection=function(x, digits = max(3, getOption("digits") - 3),...){
+  cat("\nMethod:\n")
+  print(x$method)
+  cat("\n")
+  print(x$summary)
+}
