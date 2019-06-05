@@ -84,12 +84,12 @@ data(gExp)
 spbayes=BVCfit(X, Y, Z, E, clin)
 spbayes
 
+\donttest{
 ## non-structural
 structural=FALSE
 spbayes=BVCfit(X, Y, Z, E, clin, structural=structural)
 spbayes
 
-\donttest{
 ## non-sparse
 sparse=FALSE
 spbayes=BVCfit(X, Y, Z, E, clin, sparse=sparse)
