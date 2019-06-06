@@ -7,8 +7,8 @@
 
 [![Travis build
 status](https://travis-ci.org/jrhub/spinBayes.svg?branch=master)](https://travis-ci.org/jrhub/spinBayes)
+[![CRAN](https://www.r-pkg.org/badges/version/spinBayes)](https://cran.r-project.org/package=spinBayes)
 <!-- badges: end -->
-<!-- [![CRAN](https://www.r-pkg.org/badges/version/regnet)](https://cran.r-project.org/package=regnet) -->
 
 Many complex diseases are known to be affected by the interactions
 between genetic variants and environmental exposures beyond the main
@@ -34,13 +34,13 @@ efficiently implemented in C++.
     install.packages("devtools")
     devtools::install_github("jrhub/spinBayes")
 
-<!-- * Released versions of regnet are available on R CRAN [(link)](https://cran.r-project.org/package=regnet), and can be installed within R via -->
+  - Released versions of spinBayes are available on R CRAN
+    [(link)](https://cran.r-project.org/package=spinBayes), and can be
+    installed within R via
 
-<!-- ``` -->
+<!-- end list -->
 
-<!-- install.packages("regnet") -->
-
-<!-- ``` -->
+    install.packages("spinBayes")
 
 ## Examples
 
