@@ -3,7 +3,7 @@
 
 # spinBayes
 
-> **S**emi-**p**arametric GxE **In**teraction via Bayesian Variable
+> **S**emi-**p**arametric GxE **In**teraction via **Bayes**ian Variable
 > Selection
 
 <!-- badges: start -->
@@ -18,11 +18,11 @@ coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](
 Many complex diseases are known to be affected by the interactions
 between genetic variants and environmental exposures beyond the main
 genetic and environmental effects. Existing Bayesian methods for
-gene-environment (GÃ—E) interaction studies are challenged by the
+gene-environment (G×E) interaction studies are challenged by the
 high-dimensional nature of the study and the complexity of environmental
 influences. We have developed a novel and powerful semi-parametric
 Bayesian variable selection method that can accommodate linear and
-nonlinear GÃ—E interactions simultaneously ([Ren et
+nonlinear G×E interactions simultaneously ([Ren et
 al. (2019)](https://arxiv.org/abs/1906.01057)). Furthermore, the
 proposed method can conduct structural identification by distinguishing
 nonlinear interactions from main effects only case within Bayesian
