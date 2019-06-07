@@ -3,6 +3,9 @@
 
 # spinBayes
 
+> **S**emi-**p**arametric GxE **In**teraction via Bayesian Variable
+> Selection
+
 <!-- badges: start -->
 
 [![Travis build
@@ -12,18 +15,20 @@ status](https://travis-ci.org/jrhub/spinBayes.svg?branch=master)](https://travis
 
 Many complex diseases are known to be affected by the interactions
 between genetic variants and environmental exposures beyond the main
-genetic and environmental effects. Existing Bayesian methods for G×E
-interaction studies are challenged by the high-dimensional nature of the
-study and the complexity of environmental influences. We have developed
-a novel and powerful semi-parametric Bayesian variable selection method
-that can accommodate linear and nonlinear G×E interactions
-simultaneously. Furthermore, the proposed method can conduct structural
-identification by distinguishing nonlinear interactions from main
-effects only case within Bayesian framework. Spike-and-slab priors are
-incorporated on both individual and group level to shrink coefficients
-corresponding to irrelevant main and interaction effects to zero
-exactly. The MCMC algorithms of the proposed and alternative methods are
-efficiently implemented in C++.
+genetic and environmental effects. Existing Bayesian methods for
+gene-environment (G×E) interaction studies are challenged by the
+high-dimensional nature of the study and the complexity of environmental
+influences. We have developed a novel and powerful semi-parametric
+Bayesian variable selection method that can accommodate linear and
+nonlinear G×E interactions simultaneously ([Ren et
+al. (2019)](https://arxiv.org/abs/1906.01057)). Furthermore, the
+proposed method can conduct structural identification by distinguishing
+nonlinear interactions from main effects only case within Bayesian
+framework. Spike-and-slab priors are incorporated on both individual and
+group level to shrink coefficients corresponding to irrelevant main and
+interaction effects to zero exactly. The Markov chain Monte Carlo
+algorithms of the proposed and alternative methods are efficiently
+implemented in C++.
 
 ## How to install
 
@@ -41,6 +46,9 @@ efficiently implemented in C++.
 <!-- end list -->
 
     install.packages("spinBayes")
+
+  - [PDF
+    manual](https://cran.r-project.org/web/packages/spinBayes/spinBayes.pdf)
 
 ## Examples
 
