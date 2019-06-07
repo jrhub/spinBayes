@@ -25,3 +25,6 @@ Imports: Rcpp, splines, MASS, glmnet, utils
 URL: https://github.com/jrhub/spinBayes
 BugReports: https://github.com/jrhub/spinBayes/issues
 RoxygenNote: 6.1.1
+Suggests: 
+    testthat (>= 2.1.0),
+    covr

@@ -11,16 +11,18 @@
 [![Travis build
 status](https://travis-ci.org/jrhub/spinBayes.svg?branch=master)](https://travis-ci.org/jrhub/spinBayes)
 [![CRAN](https://www.r-pkg.org/badges/version/spinBayes)](https://cran.r-project.org/package=spinBayes)
+[![Codecov test
+coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
 <!-- badges: end -->
 
 Many complex diseases are known to be affected by the interactions
 between genetic variants and environmental exposures beyond the main
 genetic and environmental effects. Existing Bayesian methods for
-gene-environment (G×E) interaction studies are challenged by the
+gene-environment (GÃ—E) interaction studies are challenged by the
 high-dimensional nature of the study and the complexity of environmental
 influences. We have developed a novel and powerful semi-parametric
 Bayesian variable selection method that can accommodate linear and
-nonlinear G×E interactions simultaneously ([Ren et
+nonlinear GÃ—E interactions simultaneously ([Ren et
 al. (2019)](https://arxiv.org/abs/1906.01057)). Furthermore, the
 proposed method can conduct structural identification by distinguishing
 nonlinear interactions from main effects only case within Bayesian
@@ -127,8 +129,8 @@ This package provides implementation for methods proposed in
 
 <!-- ## References -->
 
-<!-- * Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics. [Briefings in Bioinformatics, 16(5), 873â€“883](http://doi.org/10.1093/bib/bbu046) -->
+<!-- * Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics. [Briefings in Bioinformatics, 16(5), 873Ã¢â‚¬â€œ883](http://doi.org/10.1093/bib/bbu046) -->
 
-<!-- * Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions. [Statistics in Medicine, 34 (30): 4016â€“4030](https://doi.org/10.1002/sim.6609) -->
+<!-- * Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions. [Statistics in Medicine, 34 (30): 4016Ã¢â‚¬â€œ4030](https://doi.org/10.1002/sim.6609) -->
 
-<!-- * Wu, C, Jiang, Y, Ren, J, Cui, Y, Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.[Statistics in Medicine, 37:437â€“456](https://doi.org/10.1002/sim.7518) -->
+<!-- * Wu, C, Jiang, Y, Ren, J, Cui, Y, Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.[Statistics in Medicine, 37:437Ã¢â‚¬â€œ456](https://doi.org/10.1002/sim.7518) -->
