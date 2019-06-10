@@ -32,6 +32,16 @@ interaction effects to zero exactly. The Markov chain Monte Carlo
 algorithms of the proposed and alternative methods are efficiently
 implemented in C++.
 
+## Features
+
+  - BVCfit() integrates five different models for G×E Bayesian variable
+    selection. <!-- + sparse --> <!-- + VC --> <!-- + structural -->
+  - Generic functions BVSelection() and predict() make the workflow very
+    simple (see ‘Examples’).
+  - Highly efficient c++ implementation for MCMC algorithm.
+  - Testing coverage \>80% [![Codecov test
+    coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
+
 ## How to install
 
   - To install from github, run these two lines of code in R
@@ -41,16 +51,15 @@ implemented in C++.
     install.packages("devtools")
     devtools::install_github("jrhub/spinBayes")
 
-  - Released versions of spinBayes are available on R CRAN
-    [(link)](https://cran.r-project.org/package=spinBayes), and can be
-    installed within R via
+  - Released versions of spinBayes are available on CRAN
+    <!-- [(link)](https://cran.r-project.org/package=spinBayes) --> ,
+    and can be installed within R via
 
 <!-- end list -->
 
     install.packages("spinBayes")
 
-  - [PDF
-    manual](https://cran.r-project.org/web/packages/spinBayes/spinBayes.pdf)
+  - [PDF manual](https://cran.r-project.org/package=spinBayes)
 
 ## Examples
 

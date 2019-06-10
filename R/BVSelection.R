@@ -72,35 +72,35 @@ BVSelection.BVCNonSparse=function(obj, burn.in=obj$burn.in, prob=0.95,...){
   }
   SelectZeta = if(is.null(GS.zeta)){ 0 }else{ Selection.CI(GS.zeta, 1, prob) }
 
-  MPM.V = which(SelectRstar > 0)
-  MPM.C = setdiff(which(SelectR0 > 0), MPM.V)
+  CIM.V = which(SelectRstar > 0)
+  CIM.C = setdiff(which(SelectR0 > 0), CIM.V)
   if(is.null(q)){
-    MPM.C = which(SelectR0 > 0)
+    CIM.C = which(SelectR0 > 0)
   }else{
-    MPM.C = setdiff(which(SelectR0 > 0), MPM.V)
+    CIM.C = setdiff(which(SelectR0 > 0), CIM.V)
   }
-  MPM.Z = which(SelectZeta > 0)
-  numb = matrix(c(length(MPM.C), length(MPM.V), length(MPM.Z)), ncol=1,
+  CIM.Z = which(SelectZeta > 0)
+  numb = matrix(c(length(CIM.C), length(CIM.V), length(CIM.Z)), ncol=1,
                 dimnames=list(c("Constant effect", "Varying effect", "Linear interaction"), "#"))
 
-  Var.names = colnames(obj$coefficient$VC)[-1]
-  if(length(MPM.C)>0){
-    Main = MPM.C
-    names(Main) = Var.names[MPM.C]
+  Var.names = colnames(obj$coefficient$ZX)[-1]
+  if(length(CIM.C)>0){
+    Main = CIM.C
+    names(Main) = Var.names[CIM.C]
   }else{
     Main = NULL
   }
 
-  if(length(MPM.V)>0){
-    Varying = MPM.V
-    names(Varying) = Var.names[MPM.V]
+  if(length(CIM.V)>0){
+    Varying = CIM.V
+    names(Varying) = Var.names[CIM.V]
   }else{
     Varying = NULL
   }
 
-  if(length(MPM.Z)>0){
-    Linear = MPM.Z
-    names(Linear) = names(obj$coefficient$EG)[MPM.Z]
+  if(length(CIM.Z)>0){
+    Linear = CIM.Z
+    names(Linear) = names(obj$coefficient$EX)[CIM.Z]
   }else{
     Linear = NULL
   }
@@ -144,7 +144,7 @@ BVSelection.BVCSparse=function(obj, burn.in=obj$burn.in,...){
   numb = matrix(c(length(MPM.C), length(MPM.V), length(MPM.Z)), ncol=1,
                 dimnames=list(c("Constant effect", "Varying effect", "Linear interaction"), "#"))
 
-  Var.names = colnames(obj$coefficient$VC)[-1]
+  Var.names = colnames(obj$coefficient$ZX)[-1]
   if(length(MPM.C)>0){
     Main = MPM.C
     names(Main) = Var.names[MPM.C]
@@ -161,7 +161,7 @@ BVSelection.BVCSparse=function(obj, burn.in=obj$burn.in,...){
 
   if(length(MPM.Z)>0){
     Linear = MPM.Z
-    names(Linear) = names(obj$coefficient$EG)[MPM.Z]
+    names(Linear) = names(obj$coefficient$EX)[MPM.Z]
   }else{
     Linear = NULL
   }
