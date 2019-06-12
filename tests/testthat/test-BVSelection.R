@@ -46,7 +46,7 @@ test_that("selection for BVCNonSparse class", {
 })
 
 test_that("selection for default method", {
-  spbayes=BVCfit(X, Y, Z, E, clin)
+  spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, hyper=list(r.v=10))
   selected = BVSelection(spbayes)
   expect_true(grepl("Median Probability Model", selected$method))
   expect_equal(length(selected$indices), 3)

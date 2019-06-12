@@ -207,6 +207,7 @@ Rcpp::List BVCPointMass (arma::mat xx, arma::vec y, arma::mat W, arma::mat Ex, u
 		gsPiStar(k) = hatPiStar;
 		
 		if(progress != 0 && k % progress == 0){
+			Rcpp::checkUserInterrupt();
 			Rcpp::Rcout << "Iteration: " << k << std::endl;
 			Rcpp::Rcout << "  mse    : " << arma::accu(arma::square(res))/n << std::endl;
 			Rcpp::Rcout << "  sigmaSq: " << hatSigmaSq << std::endl;
@@ -390,6 +391,7 @@ Rcpp::List BVCPointMass_NoE (arma::mat xx, arma::vec y, arma::mat W, bool CLIN, 
 		gsPiStar(k) = hatPiStar;
 		
 		if(progress != 0 && k % progress == 0){
+			Rcpp::checkUserInterrupt();
 			Rcpp::Rcout << "Iteration: " << k << std::endl;
 			Rcpp::Rcout << "  mse    : " << arma::accu(arma::square(res))/n << std::endl;
 			Rcpp::Rcout << "  sigmaSq: " << hatSigmaSq << std::endl;

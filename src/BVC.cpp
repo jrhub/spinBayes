@@ -146,6 +146,7 @@ Rcpp::List BVCStr (arma::mat xx, arma::vec y, arma::mat W, arma::mat Ex, unsigne
 		gsLambdaStar(k) = hatLambdaSqStar;
 		
 		if(progress != 0 && k % progress == 0){
+			Rcpp::checkUserInterrupt();
 			Rcpp::Rcout << "Iteration: " << k << std::endl;
 			Rcpp::Rcout << "  mse    : " << arma::accu(arma::square(res))/n << std::endl;
 			Rcpp::Rcout << "  sigmaSq: " << hatSigmaSq << std::endl;
@@ -277,6 +278,13 @@ Rcpp::List BVCStr_NoE (arma::mat xx, arma::vec y, arma::mat W, bool CLIN, unsign
 		double rateS = bStar + L*arma::accu(1/hatInvTauSqStar)/2;
 		hatLambdaSqStar = R::rgamma(shapeS, 1/rateS);
 		gsLambdaStar(k) = hatLambdaSqStar;
+		
+		if(progress != 0 && k % progress == 0){
+			Rcpp::checkUserInterrupt();
+			Rcpp::Rcout << "Iteration: " << k << std::endl;
+			Rcpp::Rcout << "  mse    : " << arma::accu(arma::square(res))/n << std::endl;
+			Rcpp::Rcout << "  sigmaSq: " << hatSigmaSq << std::endl;
+		}
 	}
 	
 	return Rcpp::List::create(Rcpp::Named("GS.m") = gsM,

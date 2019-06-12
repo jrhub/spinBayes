@@ -8,15 +8,6 @@
 using namespace Rcpp;
 using namespace arma;
 //using namespace R;
-// using Eigen::Map;                       // 'maps' rather than copies
-// using Eigen::MatrixXd;                  // variable size matrix, double precision
-// using Eigen::VectorXd;                  // variable size vector, double precision
-// using Eigen::SelfAdjointEigenSolver;    // one of the eigenvalue solvers
-
-arma::vec mvrnormChol(const arma::vec& mu, const arma::mat& sigma) {
-   arma::vec Y = arma::randn(sigma.n_cols);
-   return mu + arma::chol(sigma) * Y;
-}
 
 double rinvgaussian(double mu, double lambda){
 	if(mu>1000){
@@ -44,7 +35,7 @@ arma::vec mvrnormCpp(const arma::vec& mu, const arma::mat& sigma, double tol){
 	// double tol = std::pow(10, -6);
 	arma::eig_sym(eigval, eigvec, sigma);
 	if(arma::any(eigval < (-1*tol*std::abs(eigval(eigval.n_elem -1))))){
-		std::string error = std::string("sigma is not positive definite");
+		std::string error = std::string("covariance matrix is not positive definite");
 		throw std::runtime_error(error);
 	}
 	arma::vec z = arma::randn(p);
@@ -57,8 +48,9 @@ arma::vec mvrnormCpp(const arma::vec& mu, const arma::mat& sigma){
 	arma::vec eigval;
 	arma::mat eigvec;
 	arma::eig_sym(eigval, eigvec, sigma);
-	if(arma::any(eigval <= 0)){
-		std::string error = std::string("sigma is not positive definite");
+	double scale = std::pow(10,5);
+	if(arma::any((arma::round(eigval * scale)/scale) <= 0)){
+		std::string error = std::string("covariance matrix is not positive definite");
 		throw std::runtime_error(error);
 	}
 	arma::vec z = arma::randn(p);
@@ -66,23 +58,3 @@ arma::vec mvrnormCpp(const arma::vec& mu, const arma::mat& sigma){
 	return rs;
 }
 
-// arma::vec mvrnormEigen(arma::vec& mu, arma::mat& sigma){ 	
-	// unsigned int p = mu.n_elem;
-	// Eigen::SelfAdjointEigenSolver<MatrixXd> es(Eigen::Map<Eigen::MatrixXd>(sigma.memptr(),
-                                                        // sigma.n_rows,
-                                                        // sigma.n_cols));
-	// // Eigen::SelfAdjointEigenSolver<MatrixXd> es(sigma_eigen);
-	// Eigen::MatrixXd eigenvectors = es.eigenvectors();
-	// Eigen::VectorXd eigenvalues = es.eigenvalues();
-	// arma::vec eigval = arma::vec(eigenvalues.data(), eigenvalues.size(), false, false);
-	// arma::mat eigvec = arma::mat(eigenvectors.data(), eigenvectors.rows(), eigenvectors.cols(), false, false);
-	// double tol = std::pow(10, -6);
-	// // eig_sym(eigval, eigvec, sigma);
-	// if(arma::any(eigval < (-1*tol*std::abs(eigval(eigval.n_elem -1))))){
-		// std::string error = std::string("sigma is not positive definite");
-		// throw std::runtime_error(error);
-	// }
-	// arma::vec z = arma::randn(p);
-	// arma::vec rs = mu + eigvec * arma::diagmat(sqrt(arma::clamp(eigval, 0, eigval.max()))) * z;
-	// return rs;
-// }

@@ -1,4 +1,4 @@
-#' @useDynLib spinBayes
+#' @useDynLib spinBayes, .registration = TRUE
 #' @importFrom Rcpp sourceCpp
 NULL
 

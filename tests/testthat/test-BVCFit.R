@@ -8,14 +8,14 @@ test_that("correct returned coefficient list for default method", {
   expect_true(sum(spbayes$coefficient$EX == 0)>0)
 })
 
-test_that("correct returned coefficient list for default method", {
-  # skip_on_cran()
-  spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, hyper=list(r.v=10))
-  expect_equal(length(spbayes$coefficient), 2)
-  expect_equal(ncol(spbayes$coefficient$ZX), ncol(X)+1)
-  expect_equal(nrow(spbayes$coefficient$ZX), spbayes$basis$q)
-  expect_output(BVCfit(X=X, Y=Y, Z=Z, clin=clin, hyper=list(r.v=10), debugging=TRUE))
-})
+# test_that("correct returned coefficient list for default method", {
+#   # skip_on_cran()
+#   spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, hyper=list(r.v=10))
+#   expect_equal(length(spbayes$coefficient), 2)
+#   expect_equal(ncol(spbayes$coefficient$ZX), ncol(X)+1)
+#   expect_equal(nrow(spbayes$coefficient$ZX), spbayes$basis$q)
+#   expect_output(BVCfit(X=X, Y=Y, Z=Z, clin=clin, hyper=list(r.v=10), debugging=TRUE))
+# })
 
 
 test_that("correct returned coefficient list for non-sparse", {
@@ -31,7 +31,7 @@ test_that("correct returned coefficient list for non-sparse", {
 
 test_that("correct returned coefficient list for non-structural", {
   # skip_on_cran()
-  spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, structural=FALSE)
+  spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, structural=FALSE, kn = 3, degree = 3)
   expect_equal(length(spbayes$coefficient), 2)
   expect_equal(ncol(spbayes$coefficient$ZX), ncol(X)+1)
   expect_equal(nrow(spbayes$coefficient$ZX), spbayes$basis$q)
@@ -39,15 +39,16 @@ test_that("correct returned coefficient list for non-structural", {
   # expect_output(BVCfit(X=X, Y=Y, Z=Z, E=E, clin=clin, debugging=TRUE))
 })
 
-test_that("correct returned coefficient list for non-sparse and non-structural", {
-  # skip_on_cran()
-  spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, sparse=FALSE, structural=FALSE, kn = 3, degree = 3)
-  expect_output(print(spbayes))
-  expect_equal(length(spbayes$coefficient), 2)
-  expect_equal(ncol(spbayes$coefficient$ZX), ncol(X)+1)
-  expect_equal(nrow(spbayes$coefficient$ZX), spbayes$basis$q)
-  expect_true(sum(spbayes$coefficient$ZX == 0)==0)
-})
+# test_that("correct returned coefficient list for non-sparse and non-structural", {
+#   # skip_on_cran()
+#   spbayes=BVCfit(X=X, Y=Y, Z=Z, clin=clin, sparse=FALSE, structural=FALSE, kn = 3, degree = 3)
+#   expect_output(print(spbayes))
+#   expect_equal(length(spbayes$coefficient), 2)
+#   expect_equal(ncol(spbayes$coefficient$ZX), ncol(X)+1)
+#   expect_equal(nrow(spbayes$coefficient$ZX), spbayes$basis$q)
+#   expect_true(sum(spbayes$coefficient$ZX == 0)==0)
+#   expect_output(BVCfit(X=X, Y=Y, Z=Z, E=E, clin=clin, sparse=FALSE, structural=FALSE, debugging=TRUE))
+# })
 
 test_that("correct returned coefficient list for BLASSO", {
   # skip_on_cran()
