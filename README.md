@@ -13,6 +13,8 @@ status](https://travis-ci.org/jrhub/spinBayes.svg?branch=master)](https://travis
 [![CRAN](https://www.r-pkg.org/badges/version/spinBayes)](https://cran.r-project.org/package=spinBayes)
 [![Codecov test
 coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
+[![CRAN RStudio mirror
+downloads](http://cranlogs.r-pkg.org/badges/spinBayes)](http://www.r-pkg.org/pkg/spinBayes)
 <!-- badges: end -->
 
 Many complex diseases are known to be affected by the interactions
@@ -39,8 +41,8 @@ implemented in C++.
   - Generic functions BVSelection() and predict() make the workflow very
     simple (see ‘Examples’).
   - Highly efficient c++ implementation for MCMC algorithm.
-  - Testing coverage \>80% [![Codecov test
-    coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
+  - Testing coverage \>80%
+    <!-- [![Codecov test coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master) -->
 
 ## How to install
 
