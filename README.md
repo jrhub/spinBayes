@@ -41,7 +41,7 @@ implemented in C++.
   - Generic functions BVSelection() and predict() make the workflow very
     simple (see ‘Examples’).
   - Highly efficient c++ implementation for MCMC algorithm.
-  - Testing coverage \>80%
+    <!-- * Testing coverage >80%  -->
     <!-- [![Codecov test coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master) -->
 
 ## How to install
@@ -135,7 +135,7 @@ This package provides implementation for methods proposed in
 
   - Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y.,
     Wu, C. (2019) Semi-parametric Bayesian variable selection for
-    gene-environment interactions.
+    gene-environment interactions. *Statistics in Medicine* (Accepted).
     [arXiv:1906.01057](https://arxiv.org/abs/1906.01057)
 
 <!-- ## References -->
