@@ -61,8 +61,6 @@ implemented in C++.
 
     install.packages("spinBayes")
 
-  - [PDF manual](https://cran.r-project.org/package=spinBayes)
-
 ## Examples
 
 <!-- ### Survival response -->
@@ -82,8 +80,11 @@ implemented in C++.
     pred = predict(spbayes, X2[test,], Z2[test,], E2[test,], clin2[test,], Y2[test,])
     pred$pmse
     # c(pred$y.pred)
+    
+    ## plot the varying effects
+    plot(spbayes)
 
-<!-- ### Binary response -->
+![](README-unnamed-chunk-2-1.png)<!-- -->![](README-unnamed-chunk-2-2.png)<!-- -->![](README-unnamed-chunk-2-3.png)<!-- -->
 
 #### Example.2 (non-structural)
 
@@ -135,8 +136,8 @@ This package provides implementation for methods proposed in
 
   - Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y.,
     Wu, C. (2019) Semi-parametric Bayesian variable selection for
-    gene-environment interactions. *Statistics in Medicine* (Accepted).
-    [arXiv:1906.01057](https://arxiv.org/abs/1906.01057)
+    gene-environment interactions. *Statistics in Medicine* 39: 617–
+    638. <https://doi.org/10.1002/sim.8434>
 
 <!-- ## References -->
 

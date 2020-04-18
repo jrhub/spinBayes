@@ -21,10 +21,10 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 LinkingTo: Rcpp, RcppArmadillo, testthat
-Imports: Rcpp, splines, MASS, glmnet, utils
+Imports: Rcpp, splines, MASS, glmnet, utils, graphics, stats
 URL: https://github.com/jrhub/spinBayes
 BugReports: https://github.com/jrhub/spinBayes/issues
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Suggests: 
     testthat (>= 2.1.0),
     covr

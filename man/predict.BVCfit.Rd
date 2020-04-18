@@ -7,17 +7,13 @@
 \alias{predict.LinOnly}
 \title{make predictions from a BVCfit object}
 \usage{
-\method{predict}{BVCfit}(object, X.new, Z.new, E.new = NULL,
-  clin.new = NULL, Y.new = NULL, ...)
+\method{predict}{BVCfit}(object, X.new, Z.new, E.new = NULL, clin.new = NULL, Y.new = NULL, ...)
 
-\method{predict}{VarLin}(object, X.new, Z.new, E.new, clin.new = NULL,
-  Y.new = NULL, ...)
+\method{predict}{VarLin}(object, X.new, Z.new, E.new, clin.new = NULL, Y.new = NULL, ...)
 
-\method{predict}{VarOnly}(object, X.new, Z.new, clin.new = NULL,
-  Y.new = NULL, ...)
+\method{predict}{VarOnly}(object, X.new, Z.new, clin.new = NULL, Y.new = NULL, ...)
 
-\method{predict}{LinOnly}(object, X.new, Z.new, E.new = NULL,
-  clin.new = NULL, Y.new = NULL, ...)
+\method{predict}{LinOnly}(object, X.new, Z.new, E.new = NULL, clin.new = NULL, Y.new = NULL, ...)
 }
 \arguments{
 \item{object}{BVCfit object.}

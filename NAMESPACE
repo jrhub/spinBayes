@@ -2,6 +2,7 @@
 
 S3method(BVSelection,BVCNonSparse)
 S3method(BVSelection,BVCSparse)
+S3method(plot,BVCfit)
 S3method(predict,BVCfit)
 S3method(predict,LinOnly)
 S3method(predict,VarLin)

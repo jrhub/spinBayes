@@ -6,5 +6,6 @@
 ^NEWS\.md$
 ^\.travis\.yml$
 ^.*[.]pdf$
+^.*[.]png$
 ^CRAN-RELEASE$
 ^codecov\.yml$

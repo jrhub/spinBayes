@@ -8,8 +8,7 @@
 \usage{
 BVSelection(obj, ...)
 
-\method{BVSelection}{BVCNonSparse}(obj, burn.in = obj$burn.in,
-  prob = 0.95, ...)
+\method{BVSelection}{BVCNonSparse}(obj, burn.in = obj$burn.in, prob = 0.95, ...)
 
 \method{BVSelection}{BVCSparse}(obj, burn.in = obj$burn.in, ...)
 }

@@ -185,7 +185,7 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   }
 
   this.call = match.call()
-  basis = list(q=q, kn=kn, degree=degree)
+  basis = list(q=q, kn=kn, degree=degree, Z=Z)
 
   if(noE && noClin){
     coeff.clin = NULL
@@ -217,7 +217,8 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   }
   if(noClin) coefficient$clin = NULL
 
-  fit = list(call = this.call, posterior = out$posterior, coefficient=coefficient, burn.in = BI, iterations=iterations)
+
+  fit = list(call = this.call, posterior = out$posterior, coefficient=coefficient, iterations=iterations, burn.in = BI)
 
   if(debugging && sparse) fit$debugList = out$debugList;
   if(VC) fit$basis = basis;

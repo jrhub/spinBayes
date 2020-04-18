@@ -4,9 +4,22 @@
 \alias{BVCfit}
 \title{fit a Semi-parametric Bayesian variable selection}
 \usage{
-BVCfit(X, Y, Z, E = NULL, clin = NULL, iterations = 10000,
-  burn.in = NULL, sparse = TRUE, structural = TRUE, VC = TRUE,
-  kn = 2, degree = 2, hyper = NULL, debugging = FALSE)
+BVCfit(
+  X,
+  Y,
+  Z,
+  E = NULL,
+  clin = NULL,
+  iterations = 10000,
+  burn.in = NULL,
+  sparse = TRUE,
+  structural = TRUE,
+  VC = TRUE,
+  kn = 2,
+  degree = 2,
+  hyper = NULL,
+  debugging = FALSE
+)
 }
 \arguments{
 \item{X}{the matrix of predictors (genetic factors) without intercept. Each row should be an observation vector. A column of 1 will be added to the X matrix
