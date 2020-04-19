@@ -3,8 +3,9 @@
 #' plot the identified varying effects
 #'
 #' @param x BVCfit object.
+#' @param prob probability for credible interval, between 0 and 1. e.g. prob=0.95 leads to 95\% credible interval
 #' @param ... other plot arguments
-#' @usage \method{plot}{BVCfit}(x, \dots)
+#' @usage \method{plot}{BVCfit}(x, prob=0.95, \dots)
 #' @seealso \code{\link{BVCfit}}
 #'
 #' @examples
@@ -13,7 +14,7 @@
 #' plot(spbayes)
 #'
 #'@export
-plot.BVCfit=function(x,...){
+plot.BVCfit=function(x, prob=0.95,...){
 
   if("LinOnly" %in% class(x)) stop("no varying effect is identified.")
 
@@ -28,6 +29,7 @@ plot.BVCfit=function(x,...){
   varName=colnames(x$coefficient$ZX)
   xlab = colnames(Z)
   if(is.null(xlab)) xlab="Z"
+  lt = (1-prob)/2; ut= 1-lt
 
   u.plot = seq(min(Z), max(Z), length.out = 100)
   u.star = seq(0, 1, length=kn+2)[-c(1,kn+2)]
@@ -50,14 +52,23 @@ plot.BVCfit=function(x,...){
       coeff.mat = pi.star %*% t(temp[,first:last])
     }
     pe = apply(coeff.mat, 1, stats::median)
-    LL = apply(coeff.mat, 1, function(t) stats::quantile(t, 0.025))
-    UL = apply(coeff.mat, 1, function(t) stats::quantile(t, 0.975))
+    LL = apply(coeff.mat, 1, function(t) stats::quantile(t, lt))
+    UL = apply(coeff.mat, 1, function(t) stats::quantile(t, ut))
 
-    lower = min(LL)-abs(min(LL))*adj; upper = max(UL)+abs(max(UL))*adj
-    graphics::plot(u.plot, pe, ylab =  bquote(~ beta[.(j)] ~ (Z)), xlab=xlab,
-         lwd=1.5, type="l", ylim=c(lower, upper), main=paste(varName[j+1]))
-    graphics::lines(u.plot, LL, col="blue", lwd=1.5, lty = 2)
-    graphics::lines(u.plot, UL, col="blue", lwd=1.5, lty = 2)
+    # lower = min(LL)-abs(min(LL))*adj; upper = max(UL)+abs(max(UL))*adj
+    # graphics::plot(u.plot, pe, ylab =  bquote(~ beta[.(j)] ~ (Z)), xlab=xlab,
+    #      lwd=1.5, type="l", ylim=c(lower, upper), main=paste(varName[j+1]))
+    # graphics::lines(u.plot, LL, col="blue", lwd=1.5, lty = 2)
+    # graphics::lines(u.plot, UL, col="blue", lwd=1.5, lty = 2)
+    data <- data.frame(u.plot,pe,LL,UL)
+    p <- ggplot2::ggplot(data, ggplot2::aes(x=u.plot)) +
+            ggplot2::geom_line(ggplot2::aes(y = pe), color = "gray30", size=1) +
+            ggplot2::geom_line(ggplot2::aes(y = LL), color="steelblue", linetype=2, size=1) +
+            ggplot2::geom_line(ggplot2::aes(y = UL), color="steelblue", linetype=2, size=1) +
+            ggplot2::labs(title=varName[j+1],
+                   x= xlab,
+                   y= bquote(~ beta[.(j)] ~ (Z)))
+    print(p)
   }
 }
 

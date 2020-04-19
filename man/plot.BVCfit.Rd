@@ -4,10 +4,12 @@
 \alias{plot.BVCfit}
 \title{plot a BVCfit object}
 \usage{
-\method{plot}{BVCfit}(x, \dots)
+\method{plot}{BVCfit}(x, prob=0.95, \dots)
 }
 \arguments{
 \item{x}{BVCfit object.}
+
+\item{prob}{probability for credible interval, between 0 and 1. e.g. prob=0.95 leads to 95\% credible interval}
 
 \item{...}{other plot arguments}
 }

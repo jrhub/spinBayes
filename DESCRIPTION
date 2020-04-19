@@ -21,7 +21,7 @@ License: GPL-2
 Encoding: UTF-8
 LazyData: true
 LinkingTo: Rcpp, RcppArmadillo, testthat
-Imports: Rcpp, splines, MASS, glmnet, utils, graphics, stats
+Imports: Rcpp, splines, MASS, glmnet, utils, graphics, stats, ggplot2
 URL: https://github.com/jrhub/spinBayes
 BugReports: https://github.com/jrhub/spinBayes/issues
 RoxygenNote: 7.0.2
