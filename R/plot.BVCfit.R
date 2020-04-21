@@ -22,6 +22,7 @@ plot.BVCfit=function(x, prob=0.95,...){
   kn = x$basis$kn
   degree = x$basis$degree
   Z = x$basis$Z
+  BI = x$burn.in
   # s = x$basis$s
 
   adj=0.1
@@ -46,12 +47,13 @@ plot.BVCfit=function(x, prob=0.95,...){
 
   for(j in c(0, ind.V)){
     if(j==0){
-      coeff.mat = pi.star %*% t(x$posterior$GS.m)
+      coeff.mat = pi.star %*% t(x$posterior$GS.m[-c(1:BI),])
     }else{
       last = j*q; first = last-q+1
-      coeff.mat = pi.star %*% t(temp[,first:last])
+      coeff.mat = pi.star %*% t(temp[-c(1:BI),first:last])
     }
     pe = apply(coeff.mat, 1, stats::median)
+    # pe = apply(coeff.mat, 1, mean)
     LL = apply(coeff.mat, 1, function(t) stats::quantile(t, lt))
     UL = apply(coeff.mat, 1, function(t) stats::quantile(t, ut))
 
@@ -62,9 +64,9 @@ plot.BVCfit=function(x, prob=0.95,...){
     # graphics::lines(u.plot, UL, col="blue", lwd=1.5, lty = 2)
     data <- data.frame(u.plot,pe,LL,UL)
     p <- ggplot2::ggplot(data, ggplot2::aes(x=u.plot)) +
-            ggplot2::geom_line(ggplot2::aes(y = pe), color = "gray30", size=1) +
-            ggplot2::geom_line(ggplot2::aes(y = LL), color="steelblue", linetype=2, size=1) +
-            ggplot2::geom_line(ggplot2::aes(y = UL), color="steelblue", linetype=2, size=1) +
+            ggplot2::geom_line(ggplot2::aes(y = pe), color = "gray35", size=1) +
+            ggplot2::geom_line(ggplot2::aes(y = LL), color="steelblue", linetype=2, size=1, alpha=0.9) +
+            ggplot2::geom_line(ggplot2::aes(y = UL), color="steelblue", linetype=2, size=1, alpha=0.9) +
             ggplot2::labs(title=varName[j+1],
                    x= xlab,
                    y= bquote(~ beta[.(j)] ~ (Z)))

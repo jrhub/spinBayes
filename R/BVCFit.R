@@ -160,6 +160,8 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   hat.clc = coeff.clc[1:nclc]              ## E CLC Z
   hat.zeta = utils::tail(coeff.clc, -nclc)  ## EX ZX
 
+  des.mat = list(xx=NULL, y=y, CLC=CLC, EX=EX)
+
   if(!VC){
 	  out = BLasso(xx, y, CLC, EX, ZX, s, iterations, coeff.array[1], coeff.array[2:ncol(xx)], hat.clc, hat.zeta, hyper, debugging)
 	  CC = apply(out$posterior$GS.r0[-c(1:BI),,drop=FALSE], 2, stats::median)
@@ -173,12 +175,14 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
       CC = apply(out$posterior$GS.r0[-c(1:BI),,drop=FALSE], 2, stats::median)
       VV = apply(out$posterior$GS.rs[-c(1:BI),,drop=FALSE], 2, stats::median)
       coeff = cbind(INT, rbind(CC, matrix(VV, nrow = q-1)))
+      des.mat$xx = xx
     }else{
       hat.r = c(rbind(hat.r0, matrix(hat.r.star, nrow = (q-1))))
       out = BVC_NS(design$Xns, y, CLC, EX, s, q, iterations, hat.m, hat.r, hat.clc, hat.zeta, sparse, hyper, debugging)
       INT = apply(out$posterior$GS.m[-c(1:BI),,drop=FALSE], 2, stats::median)
       VV = apply(out$posterior$GS.rs[-c(1:BI),,drop=FALSE], 2, stats::median)
       coeff = cbind(INT, matrix(VV, nrow = q))
+      des.mat$xx = design$Xns
     }
     colnames(coeff) = c("intercept",Var.names)
     rownames(coeff) = paste("basis", 0:(q-1), sep="")
@@ -186,6 +190,7 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
 
   this.call = match.call()
   basis = list(q=q, kn=kn, degree=degree, Z=Z)
+
 
   if(noE && noClin){
     coeff.clin = NULL
@@ -221,7 +226,10 @@ BVCfit <- function(X, Y, Z, E=NULL, clin=NULL, iterations=10000, burn.in=NULL, s
   fit = list(call = this.call, posterior = out$posterior, coefficient=coefficient, iterations=iterations, burn.in = BI)
 
   if(debugging && sparse) fit$debugList = out$debugList;
-  if(VC) fit$basis = basis;
+  if(VC){
+    fit$basis = basis
+    fit$des.mat = des.mat
+  }
 
   class(fit)=c("BVCfit", class(out))
   fit

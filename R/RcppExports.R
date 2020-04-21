@@ -37,3 +37,7 @@ BayesLasso <- function(xx, y, W, Ex, s, maxSteps, hatM, hatRStar, hatAlpha, hatZ
     .Call(`_spinBayes_BayesLasso`, xx, y, W, Ex, s, maxSteps, hatM, hatRStar, hatAlpha, hatZeta, invSigM0, hatInvTauSqStar, invSigAlpha0, hatInvTauSqZeta, hatLambdaSqStar, hatLambdaSqZeta, hatSigmaSq, a0, b0, aStar, bStar, alpha, gamma, progress)
 }
 
+BayesRefit <- function(xx, y, s0, q, maxSteps, hatM, hatRStar, invSigM0, hatInvTauSq, hatLambdaSq, hatSigmaSq, aStar, bStar, alpha, gamma, progress, debug) {
+    .Call(`_spinBayes_BayesRefit`, xx, y, s0, q, maxSteps, hatM, hatRStar, invSigM0, hatInvTauSq, hatLambdaSq, hatSigmaSq, aStar, bStar, alpha, gamma, progress, debug)
+}
+
