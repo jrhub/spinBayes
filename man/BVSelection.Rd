@@ -23,7 +23,7 @@ BVSelection(obj, ...)
 }
 \value{
 an object of class "BVSelection" is returned, which is a list with components:
-\item{method}{posterior samples from the MCMC}
+\item{method}{method used for identifying important effects}
 \item{indices}{a list of indices and names of selected variables}
 \item{summary}{a summary of selected variables}
 }

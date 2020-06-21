@@ -22,10 +22,12 @@
 \alias{E.new}
 \alias{clin.new}
 \title{simulated data for demonstrating the features of BVCfit}
-\format{gExp consists of five components: X, Y, Z, E and clin. gExp.new contains the data of new observations
+\format{
+gExp consists of five components: X, Y, Z, E and clin. gExp.new contains the data of new observations
 (X.new, Y.new, Z.new, E.new and clin.new) which can be used for evaluating the prediction performance.
 
-gExp.L contains larger datasets: X2, Y2, Z2, E2 and clin2}
+gExp.L contains larger datasets: X2, Y2, Z2, E2 and clin2
+}
 \usage{
 data("gExp")
 data("gExp.new")

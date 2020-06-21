@@ -13,7 +13,7 @@ print.BVCfit=function(x, digits = max(3, getOption("digits") - 3),...){
   # cat("\nLambda:\n")
   # print(x$lambda)
   cat("\nCoefficients:\n")
-  print(x$coefficient)
+  print(x$coefficient, digits)
   cat("Class:\n")
   print(class(x))
 
@@ -33,7 +33,7 @@ print.BVCfit=function(x, digits = max(3, getOption("digits") - 3),...){
 #' @export
 print.BVCfit.pred=function(x, digits = max(3, getOption("digits") - 3),...){
   cat("\nPMSE:\n")
-  print(x$pmse)
+  print(x$pmse, digits)
   cat("\npredicted ", length(x$y.pred), " y (list component y.pred)", sep = "")
 }
 

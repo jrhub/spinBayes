@@ -38,8 +38,8 @@ implemented in C++.
 
   - BVCfit() integrates five different models for G×E Bayesian variable
     selection. <!-- + sparse --> <!-- + VC --> <!-- + structural -->
-  - Generic functions BVSelection() and predict() make the workflow very
-    simple (see ‘Examples’).
+  - Generic functions BVSelection(), predict() and plot() make the
+    workflow very simple (see ‘Examples’).
   - Highly efficient c++ implementation for MCMC algorithm.
     <!-- * Testing coverage >80%  -->
     <!-- [![Codecov test coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master) -->

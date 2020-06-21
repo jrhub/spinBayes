@@ -15,40 +15,43 @@ NULL
 #' structural: \tab whether to use varying coefficient functions for modeling \cr \tab non-linear GxE interactions.
 #' }
 #' BVCfit() returns a BVCfit object that contains the posterior estimates of each coefficients.
-#' S3 generic functions BVSelection(), predict() and print() are implemented for BVCfit objects.
+#' S3 generic functions BVSelection(), predict(), plot() and print() are implemented for BVCfit objects.
 #' BVSelection() takes a BVCfit object and returns the variable selection results.
 #' predict() takes a BVCfit object and returns the predicted values for new observations.
 #'
 #' @references
-#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
-#' \url{https://doi.org/10.1002/sim.8434}{\emph{Statistics in Medicine}, 39: 617– 638}
+#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2020) Semiparametric Bayesian variable selection for gene-environment interactions.
+#' {\emph{Statistics in Medicine}, 39(5): 617– 638} \url{https://doi.org/10.1002/sim.8434}
 #'
-#' Wu, C., Li, S., and Cui, Y. (2012). Genetic Association Studies: An Information Content Perspective.
-#' \href{https://doi.org/10.2174/138920212803251382}{\emph{Current Genomics}, 13(7),  566–573}
-#'
-#' Wu, C. and Cui, Y. (2013). A novel method for identifying nonlinear gene–environment interactions in case–control association studies.
-#' \href{https://doi.org/10.1007/s00439-013-1350-z}{\emph{Human Genetics}, 132(12):1413–1425}
-#'
-#' Wu, C. and Cui, Y. (2013). Boosting signals in gene–based association studies via efficient SNP selection.
-#' \href{https://doi.org/10.1093/bib/bbs087}{\emph{Briefings in Bioinformatics}, 15(2):279–291}
-#'
-#' Wu, C., Cui, Y., and Ma, S. (2014). Integrative analysis of gene–environment interactions under a multi–response partially linear varying coefficient model.
-#' \href{https://doi.org/10.1002/sim.6287}{\emph{Statistics in Medicine}, 33(28), 4988–4998}
-#'
-#' Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics.
-#' \href{https://doi.org/10.1093/bib/bbu046}{\emph{Briefings in Bioinformatics}, 16(5), 873–883}
-#'
-#' Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions.
-#' \href{https://doi.org/10.1002/sim.6609}{\emph{Statistics in Medicine}, 34 (30): 4016–4030}
-#'
-#' Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–environment interactions.
-#' {\emph{ Statistical Applications in Genetics and Molecular Biology}, 17(2)}
+#' Zhou, F., Ren, J., Lu, X., Ma, S. and Wu, C. (2020). Gene–Environment Interaction: a Variable Selection Perspective.
+#' {\emph{Epistasis. Methods in Molecular Biology.} Humana Press (Accepted)} \url{https://arxiv.org/abs/2003.02930}
 #'
 #' Wu, C., Jiang, Y., Ren, J., Cui, Y., Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.
-#' \href{https://doi.org/10.1002/sim.7518}{\emph{Statistics in Medicine}, 37:437–456}
+#' {\emph{Statistics in Medicine}, 37:437–456} \url{https://doi.org/10.1002/sim.7518}
 #'
-#' Wu, C., Zhou, F., Ren, J., Li, X., Jiang, Y., Ma, S. (2019). A Selective Review of Multi-Level Omics Data Integration Using Variable Selection.
-#' \href{https://doi.org/10.3390/ht8010004}{\emph{High-Throughput}, 8(1)}
+#' Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–environment interactions.
+#' {\emph{Statistical Applications in Genetics and Molecular Biology}, 17(2)}
+#'
+#' Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions.
+#' {\emph{Statistics in Medicine}, 34 (30): 4016–4030} \url{https://doi.org/10.1002/sim.6609}
+#'
+#' Wu, C., and Ma, S. (2015). A selective review of robust variable selection with applications in bioinformatics.
+#' {\emph{Briefings in Bioinformatics}, 16(5), 873–883} \url{https://doi.org/10.1093/bib/bbu046}
+#'
+#' Wu, C., Cui, Y., and Ma, S. (2014). Integrative analysis of gene–environment interactions under a multi–response partially linear varying coefficient model.
+#' {\emph{Statistics in Medicine}, 33(28), 4988–4998} \url{https://doi.org/10.1002/sim.6287}
+#'
+#' Wu, C. and Cui, Y. (2013). Boosting signals in gene–based association studies via efficient SNP selection.
+#' {\emph{Briefings in Bioinformatics}, 15(2):279–291} \url{https://doi.org/10.1093/bib/bbs087}
+#'
+#' Wu, C. and Cui, Y. (2013). A novel method for identifying nonlinear gene–environment interactions in case–control association studies.
+#' {\emph{Human Genetics}, 132(12):1413–1425} \url{https://doi.org/10.1007/s00439-013-1350-z}
+#'
+#' Wu, C., Zhong, P.S. and Cui, Y. (2013). High dimensional variable selection for gene-environment interactions.
+#' {\emph{Technical Report. Michigan State University}}
+#'
+#' Wu, C., Li, S., and Cui, Y. (2012). Genetic Association Studies: An Information Content Perspective.
+#' {\emph{Current Genomics}, 13(7), 566–573} \url{https://doi.org/10.2174/138920212803251382}
 #'
 #' @seealso \code{\link{BVCfit}}
 NULL
