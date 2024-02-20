@@ -2,9 +2,12 @@
 % Please edit documentation in R/spinBayes-package.R
 \docType{package}
 \name{spinBayes-package}
+\alias{spinBayes}
 \alias{spinBayes-package}
-\title{Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection}
+\title{spinBayes: Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection}
 \description{
+Many complex diseases are known to be affected by the interactions between genetic variants and environmental exposures beyond the main genetic and environmental effects. Existing Bayesian methods for gene-environment (G×E) interaction studies are challenged by the high-dimensional nature of the study and the complexity of environmental influences. We have developed a novel and powerful semi-parametric Bayesian variable selection method that can accommodate linear and nonlinear G×E interactions simultaneously (Ren et al. (2020) \doi{10.1002/sim.8434}). Furthermore, the proposed method can conduct structural identification by distinguishing nonlinear interactions from main effects only case within Bayesian framework. Spike-and-slab priors are incorporated on both individual and group level to shrink coefficients corresponding to irrelevant main and interaction effects to zero exactly. The Markov chain Monte Carlo algorithms of the proposed and alternative methods are efficiently implemented in C++.
+
 Within the Bayesian framework, we propose a partially linear varying coefficient model (PLVC) for G×E interactions.  The varying coefficient functions capture the possible non-linear G×E interaction, and the linear component  models the G×E interactions with linear assumptions. The changing of basis with B splines is adopted to separate the coefficient functions with varying, non-zero constant and zero forms, corresponding to cases of nonlinear interaction, main effect only (no interaction) and no genetic interaction at all.
 }
 \details{
@@ -29,8 +32,12 @@ Zhou, F., Ren, J., Lu, X., Ma, S. and Wu, C. (2020). Gene–Environment Interact
 Wu, C., Jiang, Y., Ren, J., Cui, Y., Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.
 {\emph{Statistics in Medicine}, 37:437–456} \url{https://doi.org/10.1002/sim.7518}
 
-Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–environment interactions.
+Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–
+environment interactions.
 {\emph{Statistical Applications in Genetics and Molecular Biology}, 17(2)}
+
+Jiang, Y., Huang, Y., Du, Y., Zhao, Y., Ren, J., Ma, S., Wu, C. (2017). Identification of prognostic genes and pathways in lung adenocarcinoma using a Bayesian Approach.
+\emph{Cancer Informatics, 1(7)}
 
 Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions.
 {\emph{Statistics in Medicine}, 34 (30): 4016–4030} \url{https://doi.org/10.1002/sim.6609}
@@ -54,6 +61,13 @@ Wu, C., Li, S., and Cui, Y. (2012). Genetic Association Studies: An Information 
 {\emph{Current Genomics}, 13(7), 566–573} \url{https://doi.org/10.2174/138920212803251382}
 }
 \seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/jrhub/spinBayes}
+  \item Report bugs at \url{https://github.com/jrhub/spinBayes/issues}
+}
+
+
 \code{\link{BVCfit}}
 }
 \keyword{overview}

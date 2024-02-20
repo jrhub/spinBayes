@@ -2,8 +2,9 @@
 #' @importFrom Rcpp sourceCpp
 NULL
 
-#' @docType package
 #' @keywords overview
+"_PACKAGE"
+
 #' @name spinBayes-package
 #' @title Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection
 #' @aliases spinBayes-package
@@ -29,8 +30,12 @@ NULL
 #' Wu, C., Jiang, Y., Ren, J., Cui, Y., Ma, S. (2018). Dissecting gene-environment interactions: A penalized robust approach accounting for hierarchical structures.
 #' {\emph{Statistics in Medicine}, 37:437–456} \url{https://doi.org/10.1002/sim.7518}
 #'
-#' Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–environment interactions.
+#' Wu, C., Zhong, P.-S., and Cui, Y. (2018). Additive varying–coefficient model for nonlinear gene–
+#' environment interactions.
 #' {\emph{Statistical Applications in Genetics and Molecular Biology}, 17(2)}
+#'
+#' Jiang, Y., Huang, Y., Du, Y., Zhao, Y., Ren, J., Ma, S., Wu, C. (2017). Identification of prognostic genes and pathways in lung adenocarcinoma using a Bayesian Approach.
+#' \emph{Cancer Informatics, 1(7)}
 #'
 #' Wu, C., Shi, X., Cui, Y. and Ma, S. (2015). A penalized robust semiparametric approach for gene-environment interactions.
 #' {\emph{Statistics in Medicine}, 34 (30): 4016–4030} \url{https://doi.org/10.1002/sim.6609}

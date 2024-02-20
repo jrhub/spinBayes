@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // BVCStr
 Rcpp::List BVCStr(arma::mat xx, arma::vec y, arma::mat W, arma::mat Ex, unsigned int s, unsigned int q, int maxSteps, arma::vec hatM, arma::vec hatR0, arma::vec hatRStar, arma::vec hatAlpha, arma::vec hatZeta, arma::vec hatInvSigM0, arma::vec hatInvTauSq0, arma::vec hatInvTauSqStar, arma::mat invSigAlpha0, arma::vec hatInvTauSqZeta, double hatLambdaSq0, double hatLambdaSqStar, double hatLambdaSqZeta, double hatSigmaSq, double a0, double b0, double aStar, double bStar, double alpha, double gamma, int progress);
 RcppExport SEXP _spinBayes_BVCStr(SEXP xxSEXP, SEXP ySEXP, SEXP WSEXP, SEXP ExSEXP, SEXP sSEXP, SEXP qSEXP, SEXP maxStepsSEXP, SEXP hatMSEXP, SEXP hatR0SEXP, SEXP hatRStarSEXP, SEXP hatAlphaSEXP, SEXP hatZetaSEXP, SEXP hatInvSigM0SEXP, SEXP hatInvTauSq0SEXP, SEXP hatInvTauSqStarSEXP, SEXP invSigAlpha0SEXP, SEXP hatInvTauSqZetaSEXP, SEXP hatLambdaSq0SEXP, SEXP hatLambdaSqStarSEXP, SEXP hatLambdaSqZetaSEXP, SEXP hatSigmaSqSEXP, SEXP a0SEXP, SEXP b0SEXP, SEXP aStarSEXP, SEXP bStarSEXP, SEXP alphaSEXP, SEXP gammaSEXP, SEXP progressSEXP) {
@@ -368,7 +373,7 @@ BEGIN_RCPP
 END_RCPP
 }
 
-RcppExport SEXP run_testthat_tests();
+RcppExport SEXP run_testthat_tests(void);
 
 static const R_CallMethodDef CallEntries[] = {
     {"_spinBayes_BVCStr", (DL_FUNC) &_spinBayes_BVCStr, 28},

@@ -9,3 +9,4 @@
 ^.*[.]png$
 ^CRAN-RELEASE$
 ^codecov\.yml$
+^\.github$

@@ -38,24 +38,26 @@
 #' Users can modify the hyper-parameters by providing a named list of hyper-parameters via the argument 'hyper'.
 #' The list can have the following named components
 #' \itemize{
-#'   \item{a.c, a.v, a.e: }{ shape parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.}
-#'   \item{b.c, b.v, b.e: }{ rate parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.}
-#'   \item{r.c, r.v, r.e: }{ shape parameters of the Beta priors (\eqn{\pi^{r-1}(1-\pi)^{w-1}}) on \eqn{\pi_{c}}, \eqn{\pi_{v}} and \eqn{\pi_{e}}, respectively.}
-#'   \item{w.c, w.v, w.e: }{ shape parameters of the Beta priors on \eqn{\pi_{c}}, \eqn{\pi_{v}} and \eqn{\pi_{e}}, respectively.}
-#'   \item{s: }{ shape parameters of the Inverse-gamma prior on \eqn{\sigma^{2}}.}
-#'   \item{h: }{ scale parameters of the Inverse-gamma prior on \eqn{\sigma^{2}}.}
+#'   \item a.c, a.v, a.e: shape parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.
+#'   \item b.c, b.v, b.e: rate parameters of the Gamma priors on \eqn{\lambda_{c}}, \eqn{\lambda_{v}} and \eqn{\lambda_{e}}, respectively.
+#'   \item r.c, r.v, r.e: shape parameters of the Beta priors (\eqn{\pi^{r-1}(1-\pi)^{w-1}}) on \eqn{\pi_{c}}, \eqn{\pi_{v}} and \eqn{\pi_{e}}, respectively.
+#'   \item w.c, w.v, w.e: shape parameters of the Beta priors on \eqn{\pi_{c}}, \eqn{\pi_{v}} and \eqn{\pi_{e}}, respectively.
+#'   \item s: shape parameters of the Inverse-gamma prior on \eqn{\sigma^{2}}.
+#'   \item h: scale parameters of the Inverse-gamma prior on \eqn{\sigma^{2}}.
 #' }
 #' Please check the references for more details about the prior distributions.
 #'
 #' @return an object of class "BVCfit" is returned, which is a list with components:
-#' \item{posterior}{posterior samples from the MCMC}
-#' \item{coefficients}{a list of posterior estimates of coefficients}
-#' \item{burn.in}{the number of iterations for burn-in}
-#' \item{iterations}{the number of MCMC iterations.}
+#' \itemize{
+#' \item posterior: posterior samples from the MCMC
+#' \item coefficients: a list of posterior estimates of coefficients
+#' \item burn.in: the number of iterations for burn-in
+#' \item iterations: the number of MCMC iterations.
+#' }
 #'
 #' @references
-#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2019) Semi-parametric Bayesian variable selection for gene-environment interactions.
-#' \url{https://arxiv.org/abs/1906.01057}
+#' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2020) Semiparametric Bayesian variable selection for gene-environment interactions.
+#' {\emph{Statistics in Medicine}, 39(5): 617– 638} \url{https://doi.org/10.1002/sim.8434}
 #'
 #' @examples
 #' data(gExp)
