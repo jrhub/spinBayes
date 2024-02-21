@@ -1,7 +1,7 @@
 Package: spinBayes
 Type: Package
 Title: Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection
-Version: 0.1.0
+Version: 0.2.0
 Author: Jie Ren, Fei Zhou, Xiaoxi Li, Cen Wu, Yu Jiang
 Maintainer: Jie Ren <jieren@ksu.edu>
 Description: Many complex diseases are known to be affected by the interactions between 
@@ -16,7 +16,7 @@ Description: Many complex diseases are known to be affected by the interactions 
    and group level to shrink coefficients corresponding to irrelevant main and interaction 
    effects to zero exactly. The Markov chain Monte Carlo algorithms of the proposed and 
    alternative methods are  efficiently implemented in C++. 
-Depends: R (>= 3.5.0)
+Depends: R (>= 4.0.0)
 License: GPL-2
 Encoding: UTF-8
 LazyData: true

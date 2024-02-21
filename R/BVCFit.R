@@ -57,7 +57,7 @@
 #'
 #' @references
 #' Ren, J., Zhou, F., Li, X., Chen, Q., Zhang, H., Ma, S., Jiang, Y., Wu, C. (2020) Semiparametric Bayesian variable selection for gene-environment interactions.
-#' {\emph{Statistics in Medicine}, 39(5): 617– 638} \url{https://doi.org/10.1002/sim.8434}
+#' {\emph{Statistics in Medicine}, 39(5): 617– 638} \doi{10.1002/sim.8434}
 #'
 #' @examples
 #' data(gExp)
