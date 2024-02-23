@@ -10,9 +10,9 @@
 
 [![CRAN](https://www.r-pkg.org/badges/version/spinBayes)](https://cran.r-project.org/package=spinBayes)
 [![Codecov test
-coverage](https://codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
+coverage](https://app.codecov.io/gh/jrhub/spinBayes/branch/master/graph/badge.svg)](https://codecov.io/gh/jrhub/spinBayes?branch=master)
 [![CRAN RStudio mirror
-downloads](http://cranlogs.r-pkg.org/badges/spinBayes)](http://www.r-pkg.org/pkg/spinBayes)
+downloads](https://cranlogs.r-pkg.org/badges/spinBayes)](https://www.r-pkg.org:443/pkg/spinBayes)
 [![R-CMD-check](https://github.com/jrhub/spinBayes/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/jrhub/spinBayes/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
