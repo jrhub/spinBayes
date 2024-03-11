@@ -373,8 +373,6 @@ BEGIN_RCPP
 END_RCPP
 }
 
-RcppExport SEXP run_testthat_tests(void);
-
 static const R_CallMethodDef CallEntries[] = {
     {"_spinBayes_BVCStr", (DL_FUNC) &_spinBayes_BVCStr, 28},
     {"_spinBayes_BVCStr_NoE", (DL_FUNC) &_spinBayes_BVCStr_NoE, 25},
@@ -386,7 +384,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_spinBayes_BVCNoStr_NoE", (DL_FUNC) &_spinBayes_BVCNoStr_NoE, 20},
     {"_spinBayes_BayesLasso", (DL_FUNC) &_spinBayes_BayesLasso, 24},
     {"_spinBayes_BayesRefit", (DL_FUNC) &_spinBayes_BayesRefit, 17},
-    {"run_testthat_tests", (DL_FUNC) &run_testthat_tests, 0},
     {NULL, NULL, 0}
 };
 
