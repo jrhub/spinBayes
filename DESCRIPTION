@@ -1,7 +1,7 @@
 Package: spinBayes
 Type: Package
 Title: Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection
-Version: 0.2.0
+Version: 0.2.1
 Author: Jie Ren, Fei Zhou, Xiaoxi Li, Cen Wu, Yu Jiang
 Maintainer: Jie Ren <jieren@ksu.edu>
 Description: Many complex diseases are known to be affected by the interactions between 
