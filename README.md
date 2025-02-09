@@ -50,7 +50,7 @@ implemented in C++.
 <!-- -->
 
     install.packages("devtools")
-    devtools::install_github("jrhub/spinBayes")
+    devtools::install_github("jrhub/spinBayes") #v0.2.2
 
 - Released versions of spinBayes are available on CRAN
   <!-- [(link)](https://cran.r-project.org/package=spinBayes) --> , and

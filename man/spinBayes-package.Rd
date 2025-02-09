@@ -69,4 +69,16 @@ Useful links:
 
 \code{\link{BVCfit}}
 }
+\author{
+\strong{Maintainer}: Jie Ren \email{renjie0910@gmail.com}
+
+Authors:
+\itemize{
+  \item Fei Zhou
+  \item Xiaoxi Li
+  \item Cen Wu
+  \item Yu Jiang
+}
+
+}
 \keyword{overview}

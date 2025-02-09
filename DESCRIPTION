@@ -1,9 +1,15 @@
 Package: spinBayes
 Type: Package
 Title: Semi-Parametric Gene-Environment Interaction via Bayesian Variable Selection
-Version: 0.2.1
-Author: Jie Ren, Fei Zhou, Xiaoxi Li, Cen Wu, Yu Jiang
-Maintainer: Jie Ren <jieren@ksu.edu>
+Version: 0.2.2
+Authors@R: c(
+  person(given = "Jie", family = "Ren", role = c("aut", "cre"),
+         email = "renjie0910@gmail.com"),
+  person(given = "Fei", family = "Zhou", role = "aut"),
+  person(given = "Xiaoxi", family = "Li", role = "aut"),
+  person(given = "Cen", family = "Wu", role = "aut"),
+  person(given = "Yu", family = "Jiang", role = "aut"))
+Maintainer: Jie Ren <renjie0910@gmail.com>
 Description: Many complex diseases are known to be affected by the interactions between 
    genetic variants and environmental exposures beyond the main genetic and environmental 
    effects. Existing Bayesian methods for gene-environment (G×E) interaction studies are 
@@ -24,7 +30,7 @@ LinkingTo: Rcpp, RcppArmadillo, testthat
 Imports: Rcpp, splines, glmnet, utils, stats, ggplot2
 URL: https://github.com/jrhub/spinBayes
 BugReports: https://github.com/jrhub/spinBayes/issues
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Suggests: 
     testthat (>= 3.0.0),
     covr
